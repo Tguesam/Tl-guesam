@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tlapalería Guesam - Calidad y Variedad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffc107;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            width: 80px;
+        }
+
+        nav {
+            background-color: #161616;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            margin: 40px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .animated-image {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .animated-image:hover {
+            transform: scale(1.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .btn-highlight {
+            background-color: #ffc107;
+            color: #161616;
+            padding: 12px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-highlight:hover {
+            background-color: #ff8c00;
+        }
+
+        footer {
+            background-color: #161616;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 0 15px;
+            font-size: 25px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffc107;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<audio id="bg-music" autoplay loop>
+    <source src="restraint.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let audio = document.getElementById("bg-music");
+        audio.volume = 0.1; //ajusta el vol
+        audio.play().catch(error => {
+            console.log("Autoplay bloqueado, esperando interacción del usuario.");
+        });
+
+        document.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    });
+</script>
+<body>
+    <header>
+        <h1>Tlapalería Guesam - Calidad, Variedad y Precio</h1>
+        <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </header>
+
+    <nav>
+        <a href="conocenos.html">Conócenos</a>
+        <a href="servicios.html">Nuestros servicios</a>
+        <a href="productos.html">Productos</a>
+        <a href="ubicacion.html">Dónde encontrarnos</a>
+        <a href="contacto.html">Contáctanos</a>
+    </nav>
+
+    <section class="fade-in">
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos una tlapalería con más de 10 años de experiencia ofreciendo herramientas, pinturas y materiales de construcción 
+        de la mejor calidad. Nuestro compromiso es brindarte soluciones para cualquier proyecto, desde mejoras en el hogar hasta 
+        trabajos profesionales.</p>
+        <a href="conocenos.html" class="btn-highlight">Ver más</a>
+    </section>
+
+    <section id="categoria1" class="fade-in">
+        <h2>Variedad de Productos</h2>
+        <p>Ofrecemos todo lo que necesitas: herramientas, pinturas, productos de ferretería, material eléctrico y mucho más.</p>
+        
+        <div class="image-container">
+            <img src="conocenos1.jpg" alt="Nuestra tienda" class="animated-image">
+            <img src="herramientas.jpg" alt="Variedad de herramientas" class="animated-image">
+            <img src="pinturas.jpg" alt="Sección de pinturas" class="animated-image">
+        </div>
+        <a href="productos.html" class="btn-highlight">Explora nuestro catálogo</a>
+    </section>
+
+    <section id="categoria2" class="fade-in">
+        <h2>Servicios Especiales</h2>
+        <p>Desde asesoría en materiales hasta corte de llaves y servicio personalizado. ¡Te ayudamos en cada paso!</p>
+        
+        <div class="image-container">
+            <img src="asesoria1.jpg" alt="Asesoría personalizada" class="animated-image">
+            <img src="corte_llaves.jpg" alt="Corte de llaves" class="animated-image">
+        </div>
+        <a href="servicios.html" class="btn-highlight">Conoce nuestros servicios</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Tlapalería Guesam</p>
+            <p>
+                <a href="https://wa.me/5215542259629" target="_blank" style="text-decoration: none; color: inherit;">
+                  <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>
+                  55-4225-9629
+                </a>
+              </p>
+              
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61573374630826" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/tguesam/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:tguesam@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            Av. Mexiquense, Mz. 160, Lt. 27, Cs. 3, Los Héroes Tecámac, 6ta. Secc., C.P. 55763, Tecámac, México
+            <p>&copy; 2025 Tlapalería Guesam</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

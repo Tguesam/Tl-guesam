@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="index.html">
+        <img src="logo.jpg" alt="Logo" class="logo">
+    </a>    
+    <title>Tlapalería Guesam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    header {
+        background-color: #ffc107;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        width: 80px;
+    }
+
+    nav {
+        background-color: #161616;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+        color: #ffc107;
+    }
+
+    .services-section {
+        margin: 40px;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h2 {
+        color: #333;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .service-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 15px;
+        transition: transform 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+
+    .service-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .service-img:hover {
+        transform: scale(1.1);
+    }
+
+    .btn-highlight {
+        background-color: #ffc107;
+        color: #161616;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-highlight:hover {
+        background-color: #ff8c00;
+    }
+
+    footer {
+        background-color: #161616;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .social-icons a {
+        color: #fff;
+        margin: 0 15px;
+        font-size: 25px;
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #ffc107;
+    }
+
+        .form-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .form-section h3 {
+            color: #333;
+        }
+
+        .form-section .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-section button {
+            background-color: #f9d71c;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-section button:hover {
+            background-color: #e6c300;
+        }
+    </style>
+</head>
+<audio id="bg-music" autoplay loop>
+    <source src="restraint.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let audio = document.getElementById("bg-music");
+        audio.volume = 0.1; //ajusta el vol
+        audio.play().catch(error => {
+            console.log("Autoplay bloqueado, esperando interacción del usuario.");
+        });
+
+        document.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <h1>Tlapalería Guesam - Calidad, Variedad y Precio</h1>
+        <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </header>
+
+    <nav>
+        <a href="conocenos.html">Conócenos</a>
+        <a href="servicios.html">Nuestros servicios</a>
+        <a href="productos.html">Productos</a>
+        <a href="ubicacion.html">Dónde encontrarnos</a>
+        <a href="contacto.html">Contáctanos</a>
+    </nav>
+    <section class="form-container">
+        <h2>Solicita tu cotización</h2>
+        <p>Déjanos tus datos y te enviaremos una cotización detallada lo antes posible.</p>
+        <form action="mailto:tguesam@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+                <label for="nombre"><i class="fa-solid fa-user"></i> Nombre Completo</label>
+                <input type="text" id="nombre" name="Nombre" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                <input type="email" id="email" name="Correo" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="telefono"><i class="fa-solid fa-phone"></i> Teléfono</label>
+                <input type="tel" id="telefono" name="Teléfono" class="form-control" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="productos"><i class="fa-solid fa-list"></i> Anota los productos que deseas cotizar</label>
+                <textarea id="productos" name="Productos" rows="4" class="form-control" placeholder="Ejemplo: Martillo, Llave Ajustable, Focos LED" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="comentarios"><i class="fa-solid fa-comments"></i> Comentarios Adicionales</label>
+                <textarea id="comentarios" name="Comentarios" rows="3" class="form-control" placeholder="Escribe aquí cualquier detalle adicional..."></textarea>
+            </div>
+    
+            <button type="submit" class="btn-submit">Solicitar Cotización</button>
+        </form>
+    </section>
+    
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        .form-container h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    
+        .form-container p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+    
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+    
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 5px;
+        }
+    
+        .form-group i {
+            color: #ffc107;
+            margin-right: 5px;
+        }
+    
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+    
+        .form-control:focus {
+            border-color: #ffc107;
+            box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+            outline: none;
+        }
+    
+        .btn-submit {
+            background-color: #ffc107;
+            color: #161616;
+            font-size: 18px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            display: block;
+            width: 100%;
+            font-weight: bold;
+        }
+    
+        .btn-submit:hover {
+            background-color: #ff8c00;
+        }
+    
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Tlapalería Guesam</p>
+            <p>
+                <a href="https://wa.me/5215542259629" target="_blank" style="text-decoration: none; color: inherit;">
+                  <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>
+                  55-4225-9629
+                </a>
+              </p>
+              
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61573374630826" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/tguesam/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="mailto:tguesam@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            Av. Mexiquense, Mz. 160, Lt. 27, Cs. 3, Los Héroes Tecámac, 6ta. Secc., C.P. 55763, Tecámac, México
+            <p>&copy; 2025 Tlapalería Guesam</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
